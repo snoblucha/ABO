@@ -111,7 +111,7 @@ class abo_item {
 		$res .= sprintf("%s %d %s %s%04d ", abo::account($this->account_number,$this->account_pre), $this->amount, $this->variable_sym, $this->bank, $this->const_sym);
 		
 		$res .= ($this->spec_sym ? $this->spec_sym : ' ').' ';
-		$res .= ($this->message ? substr('AV:'.$this->message, 0,38) : ' ');
+		$res .= ($this->message ? mb_substr('AV:'.$this->message, 0,38) : ' ');
 		$res.="\r\n";
 		
 		return $res;
